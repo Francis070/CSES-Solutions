@@ -1,27 +1,28 @@
+/*
+Problem statement - 
+
+Consider an algorithm that takes as input a positive integer n. If n is even, the algorithm divides it by two, 
+and if n is odd, the algorithm multiplies it by three and adds one. 
+The algorithm repeats this, until n is one. For example, the sequence for n=3 is as follows:
+
+3 10 5 16 8 4 2 1 
+
+*/
+
+/*
+Complexities - 
+n - number given as input.
+Time = O(n) (time taken to silumate)
+Space = O(1)
+*/
+
 #include <bits/stdc++.h>
 #define wl            ll t;cin>>t;while(t--)
-#define rep(a,b,c)    for(ll a = b; a<c; a++)
-#define mp            make_pair
-#define vi            vector<ll>
-#define pb            push_back
-#define f_min         *min_element
-#define f_max         *max_element
-#define all(v)        v.begin(), v.end()
 #define endl          "\n"
 #define ll            long long int 
 #define ld            long double
-#define pi            pair<ll , ll>
 #define ull           unsigned long long
-#define ps(x,y)       fixed<<setprecision(x)<<y
 #define li            long int
-#define frs           first
-#define sec           second
-#define inf           INT_MAX
-#define setbits(x)    __builtin_popcountll(x)
-#define trailz(x)     __builtin_ctzll(x)
-#define pqnor         priority_queue<ll>
-#define pqrev         priority_queue<ll, vi, greater<ll>>
-#define ninf          INT_MIN
 #define ul            unsigned long int
 #define fast          std::ios::sync_with_stdio(false); cin.tie(NULL);
 const ll mod = 1e9 + 7;
@@ -29,7 +30,16 @@ const ll N = 1e6 + 5;
 using namespace std;
 
 void solve(){
-    
+    ll n;
+    cin>>n;
+    cout<<n<<" ";
+    while(n != 1){
+        if(n & 1)   // for odd
+            n = (n * 3) + 1;
+        else        // for even 
+            n /= 2; 
+        cout<<n<<" ";
+    }
 }   
     
 
@@ -40,9 +50,6 @@ int main()
     freopen("output.txt", "w", stdout);
 #endif
     fast
-    wl
-    {
-        solve();
-    }
+    solve();
     return 0;
 }
