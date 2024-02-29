@@ -26,8 +26,36 @@ const ll mod = 1e9 + 7;
 const ll N = 1e6 + 5;
 using namespace std;
 
+ll fact2(ll num){              
+    ll res = (num * (num-1))/2;
+    return res;
+}
+
 void solve(){
-    
+    int n;
+    cin>>n;
+
+    vector<ll> v (n, 0);
+    int cur = 1, inc = 1;
+    for(ll i =0; i < n; i++){
+        if(i >= 2){
+            v[i] = 8 * cur;
+            cur += inc;
+            cur++;
+            inc++;
+        }
+    }
+
+    for(ll i = 1; i < n; i++){
+        ll er = i + 1;
+
+        ll val = fact2(er * er);    // calculating the fact as Nc2 can be the total number of ways we can arrange knights
+        v[i] = val - v[i];          // subtracting the ways that the knights can attack.
+    }
+
+    for(int i = 0; i < n; i++){
+        cout<<v[i]<<endl;
+    }
 }   
     
 
