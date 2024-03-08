@@ -49,10 +49,8 @@ void get_all_paths(int ind, int x, int y, int cnt, int & paths, string & s, vect
 
     if(ind >= m)
         return;
-
-    // check for slice
     
-
+    // dfs on the rest of the cells
     vis[x][y] = 1;
 
     if(s[ind] == '?'){
